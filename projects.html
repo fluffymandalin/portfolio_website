@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <link rel="stylesheet" href="styles_projects.css">
+</head>
+<body><main class="wrapper"><div class="container page-projects">
+<header class="blog-header" id="blog-header"><a href="/" class="blog-header__logo"></a>
+<nav>
+<a href="/" class="blog-header__logo"></a>
+<ul id="menu" aria-labelledby="show-menu-button">
+<li><a href="/blog">Writing</a></li>
+<li><a href="/projects">Projects</a></li>
+<li><a href="https://untested.sonnet.io" target="_blank">Notes</a></li>
+</ul>
+<button class="hide-menu" onclick="document.dispatchEvent(new CustomEvent(&quot;menu:close&quot;))" arial-label="close menu"></button>
+</nav>
+<button class="show-menu" id="show-menu-button" arial-label="show menu" aria-expanded="false" onclick="document.dispatchEvent(new CustomEvent(&quot;menu:open&quot;))">menu</button>
+</header>
+<script type="module">[...document.querySelectorAll('#menu a')]
+    .forEach( el => {
+      el.addEventListener('click', () =>{
+        if(el.getAttribute('href').startsWith('http')) {
+          document.dispatchEvent(new CustomEvent('menu:close'))
+        }
+      })
+    } 
+  )
+
+  document.addEventListener('menu:close', () => {
+    document
+      .querySelector('#blog-header')
+      .classList
+      .remove('is-visible');
+
+    document.querySelector('#show-menu-button').setAttribute('aria-expanded', 'false')
+
+  })
+
+  document.addEventListener('menu:open', () => {
+    document
+      .querySelector('#blog-header')
+      .classList
+      .add('is-visible')
+
+      document.querySelector('#show-menu-button').setAttribute('aria-expanded', 'true')
+  })</script>
+  <h1>Projects</h1><p class="page-projects__intro">A selection of my personal projects and experiments.<br>For my client work, see my <a href="/cv" target="_blank">CV</a> or <a href="mailto:hello@sonnet.io">get&nbsp;in&nbsp;touch</a>!</p><pre>    </pre><ul class="projects-list"><li class="projects-entry">
+    <article>
+    <header>
+      <h1><a href="https://sit.sonnet.io" target="_blank">Sit.</a></h1><time datetime="Sun Dec 25 2022 00:00:00 GMT+0000 (Coordinated Universal Time)">December 2022</time></header><a href="https://sit.sonnet.io" class="projects-entry__thumbnail" target="_blank"><picture><source type="image/avif" srcset="/images/opt/SMBKxcVo35-600.avif 600w, /images/opt/SMBKxcVo35-1200.avif 1200w" sizes="(min-width: 1200px) 60rem, 100vw"><source type="image/webp" srcset="/images/opt/SMBKxcVo35-600.webp 600w, /images/opt/SMBKxcVo35-1200.webp 1200w" sizes="(min-width: 1200px) 60rem, 100vw"><source type="image/jpeg" srcset="/images/opt/SMBKxcVo35-600.jpeg 600w, /images/opt/SMBKxcVo35-1200.jpeg 1200w" sizes="(min-width: 1200px) 60rem, 100vw"><img alt="Sit." loading="lazy" decoding="async" src="/images/opt/SMBKxcVo35-600.jpeg" width="1200" height="928"></picture></a>
+      <section class="projects-entry__content">
+        <p>Sit down and do <em>nothing</em>.</p><p>We spend so much time building things that steal attention &amp; extract value from users. <a href="https://sit.sonnet.io" target="_blank">Sit.</a> does the opposite: it gives you back your time.</p><p>Please share with a friend who needs to sit the fuck down or enjoy the experience yourself.</p></section>
+        <section class="projects-actions"><a href="https://sit.sonnet.io" class="projects-actions__link" target="_blank">Open</a>
+        </section>
+      </article></li>
+      <li class="projects-entry"><article><header><h1><a href="https://butter.sonnet.io" target="_blank">Butter</a></h1>
+        <time datetime="Fri May 05 2023 00:00:00 GMT+0000 (Coordinated Universal Time)">May 2023</time>
+      </header>
+      <a href="https://butter.sonnet.io" class="projects-entry__thumbnail" target="_blank"><picture><source type="image/avif" srcset="/images/opt/cHjDWG9A5--600.avif 600w, /images/opt/cHjDWG9A5--1200.avif 1200w" sizes="(min-width: 1200px) 60rem, 100vw"><source type="image/webp" srcset="/images/opt/cHjDWG9A5--600.webp 600w, /images/opt/cHjDWG9A5--1200.webp 1200w" sizes="(min-width: 1200px) 60rem, 100vw"><source type="image/jpeg" srcset="/images/opt/cHjDWG9A5--600.jpeg 600w, /images/opt/cHjDWG9A5--1200.jpeg 1200w" sizes="(min-width: 1200px) 60rem, 100vw"><img alt="Butter" loading="lazy" decoding="async" src="/images/opt/cHjDWG9A5--600.jpeg" width="1200" height="953"></picture></a><section class="projects-entry__content"><p>Butter is a browser extension that skips sponsored content in YouTube videos by watching them before you do. Because you deserve butter.</p></section><section class="projects-actions"><a href="https://butter.sonnet.io" class="projects-actions__link" target="_blank">Open</a></section></article></li>
+      
+    </body>
+</html>
