@@ -483,6 +483,14 @@ body,html {
         margin: calc(var(--ru)*0.5em) 0
     }
 
+    .intro-content p:nth-child(3) {
+        margin-left: -40px;
+      }
+
+    .intro-content p:nth-child(4) {
+        margin-left: -90px;
+      }
+
     .intro-content p:last-child br {
         display: block
     }
