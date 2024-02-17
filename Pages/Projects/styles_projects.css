@@ -4,6 +4,7 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
+
 body {
     margin: 0
 }
@@ -1588,10 +1589,12 @@ body {
 }
 
 .page-projects>hr:after {
-    content: "❦"
+    content: "*"
 }
 
 .projects-list {
+    justify-content: space-around; /* Change to space-around */
+    display: flex; 
     margin: 0 auto;
     max-width: var(--max-width);
     padding: 0;
@@ -1599,12 +1602,36 @@ body {
 }
 
 @media (min-width: 800px) {
+.projects-entry {
+    width: 50%; 
+    box-sizing: border-box; 
+    justify-content: space-evenly;
+    margin-bottom: 20px; 
+  }
+
+  .projects-list li {
+    margin-right: 50px; 
+  }
+
+  .projects-list li:last-child {
+    margin-right: 0; 
+  }
+
+}
+
+@media (max-width: 800px) {
     .projects-list {
         display:flex;
         flex-direction: column;
-        align-items: start
+        align-items: center
     }
+
+    .projects-entry {
+      padding: 50px;
+      margin: 50px;
+      }
 }
+
 
 .projects-entry {
     margin-bottom: 7.5rem;
@@ -1622,7 +1649,7 @@ body {
 
 @media (min-width: 800px) {
     .projects-entry h1 {
-        font-size:6rem;
+        font-size:4.5rem;
         line-height: 6rem;
         line-height: calc(var(--ru)*4rem)
     }
